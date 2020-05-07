@@ -16,7 +16,7 @@ function App() {
     if (currentState === undefined) return;
     const activeSwitches = Object.values(switches).filter(value => value).length;
     const MAX_ACTIVE = Object.values(switches).length - 1;
-    const newState = (activeSwitches === MAX_ACTIVE) ? initialState : switches;
+    const newState = (activeSwitches === MAX_ACTIVE && currentState === false) ? initialState : switches;
     setSwitches({...newState, [id]: !currentState})
   }
 
